@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+        <div class = "container">
+            <span class="navbar-brand mb-0 h1" style="color: rgb(237, 237, 252);">Popular Python Books</span>
+            <ul class="navbar-nav">
+                <form class = "form-inline">
+                    <a href='/insert'><button class="btn btn-outline-success" type="button">Add Book</button></a>                  
+                </form>
+            </ul>
+        </div>
+    </nav><br><br>
+{% for i in page_obj %}
+<ul>
+<h2><a href = "{{i.get_absolute_url}}" style="color: rgb(87, 92, 231); text-decoration: none;">{{i.Title}}</a></h2>
+<h4 style="color: rgb(0, 4, 2); text-decoration: none;">{{i.Description|truncatewords:10}}</h4>
+</ul><br><br>
+{% endfor %}
+
+<nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center">
+      {% if page_obj.has_previous %}
+      <li class="page-item">
+          <a class="page-link" href="?page={{page_obj.previous_page_number}}">Previous</a>
+      </li>
+      {% endif %}
+      <li class="page-item">
+          <a class="page-link">{{page_obj.number}}</a>
+      </li>
+      {% if page_obj.has_next %}
+      <li class="page-item">
+          <a class="page-link" href="?page={{page_obj.next_page_number}}">Next</a>
+      </li>
+      {% endif %}
+    </ul>
+  </nav>
+
+</body>
+</html>
+

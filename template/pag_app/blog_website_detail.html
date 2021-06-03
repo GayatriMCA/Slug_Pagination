@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+        <div class = "container">
+            <span class="navbar-brand mb-0 display-h1 text-white">{{blog_website.Title}}</span>
+            <ul class="navbar-nav">
+                <form class = "form-inline">
+                    <a href='/home'><button class="btn btn-outline-success" type="button">HOME</button></a>                  
+                </form>
+            </ul>
+        </div>
+    </nav><br>
+    <div class = "jumbotron">
+        <ul>
+            <p style="color: rgb(59, 151, 176); text-align:justify;">
+                <h3>{{blog_website.Author}}</h3>
+            </p><br>
+            <h4 style="color: rgb(9, 7, 2); text-decoration-line: underline; text-align: justify;">
+            Book Overview</h4>
+            <p style="color: rgb(30, 24, 69); text-align:justify;">
+                {{blog_website.Description}}</p>
+        </ul>
+        
+    </div>
+   
+</body>
+</html>

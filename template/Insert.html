@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript">
+        function conf()
+        {
+        alert('Thank you!!!')
+        }
+        </script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+        <div class = "container">
+            <span class="navbar-brand mb-0 display-h1 text-white">Enter Book Details</span>
+            <ul class="navbar-nav">
+                <form class = "form-inline">
+                    <a href='/home'><button class="btn btn-outline-success" type="button">HOME</button></a>                  
+                </form>
+            </ul>
+        </div>
+    </nav><br>
+    <form action = '' method = "POST" align = "center"> 
+        {% csrf_token %}
+        <div class="form-group row">
+          <label for="Author" class="col-sm-2 col-form-label col-form-label-lg">Author</label>
+          <div class = "col-md-14">
+              <input type="text" class="form-control form-control-lg" id="Author" name = "Author" placeholder="Enter Author of the Book">
+            </div>
+        </div>
+        <div class="form-group row">
+          <label for="Title" class="col-sm-2 col-form-label col-form-label-lg">Title</label>
+          <div class = "col-md-14">
+            <input type="text" class="form-control form-control-lg" id="Title" name = "Title" placeholder="Enter Title of the Book">
+          </div>
+        </div>
+        <div class="form-group row">
+            <label for="Description" class="col-sm-2 col-form-label col-form-label-lg">Description</label>
+            <div class = "col-md-50">
+                <textarea class="form-control form-control-lg" id="Description" name = "Description" rows="6" cols="50" placeholder="Enter Description Here"></textarea>
+            </div>
+        </div>
+        
+       <button type="submit" class="btn btn-primary" name = "submit" onclick="conf()">Submit</button>
+    </form>
+    
+</body>
+</html>
